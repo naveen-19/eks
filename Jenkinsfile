@@ -15,7 +15,7 @@ pipeline {
         stage('git clone') {
             steps {
                 sh 'sudo rm -rf /home/ec2-user/newfolder'
-                sh 'sudo rm -rf *;sudo git clone https://github.com/naveen-19/eks--1.git /home/ec2-user/newfolder'
+                sh 'sudo rm -rf *;sudo git clone https://github.com/naveen-19/terraform-aws-eks-cluster.git /home/ec2-user/newfolder'
             }
         }
        // stage('tfsvars create') {
@@ -34,11 +34,11 @@ pipeline {
             }
         }
         
-       stage('terraform apply') {
+      /* stage('terraform apply') {
             steps {
                 sh 'sudo /home/ec2-user/terraform apply --auto-approve /home/ec2-user/newfolder'
             }
-        }
+        }*/
         stage('terraform ended') {
             steps {
                 sh 'echo "Ended....!!"'
